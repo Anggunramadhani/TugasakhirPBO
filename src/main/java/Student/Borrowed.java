@@ -27,11 +27,14 @@ public class Borrowed extends Application {
     public void start(Stage primaryStage) {
         AnchorPane root = new AnchorPane();
         root.setPrefSize(700, 500);
+        root.setStyle("-fx-background-color: lightblue;");
 
-        Label titleLabel = new Label("Return Book");
-        titleLabel.setLayoutX(14.0);
-        titleLabel.setLayoutY(16.0);
-        titleLabel.setFont(new Font("System Bold", 36.0));
+        Label titleLabel = new Label("Pengembalian Buku");
+        titleLabel.setLayoutX(35.0);
+        titleLabel.setLayoutY(40.0);
+        titleLabel.setFont(new Font("Times New Roman", 25.0));
+        titleLabel.setStyle("-fx-text-fill: #ff0000;");
+
 
         Button backButton = new Button("Back");
         backButton.setLayoutX(14.0);
@@ -110,6 +113,8 @@ public class Borrowed extends Application {
         okButton.setLayoutX(603.0);
         okButton.setLayoutY(37.0);
         okButton.setPrefSize(40.0, 40.0);
+        okButton.setStyle("-fx-background-color: #4CAF50; -fx-text-fill: white;");
+
 
         root.getChildren().addAll(titleLabel, backButton, scrollPane, bookIdLabel, bookIdField, okButton, errorLabel);
 

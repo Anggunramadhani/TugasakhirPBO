@@ -17,11 +17,14 @@ public class MenuStudent extends Application {
     public void start(Stage primaryStage) {
         AnchorPane root = new AnchorPane();
         root.setPrefSize(700, 500);
+        root.setStyle("-fx-background-color: lightblue;");
+
 
         Label titleLabel = new Label("Student Menu");
         titleLabel.setLayoutX(243.0);
         titleLabel.setLayoutY(60.0);
-        titleLabel.setFont(new Font("System Bold", 36.0));
+        titleLabel.setFont(new Font("Times New Roman", 36.0));
+        titleLabel.setStyle("-fx-text-fill: #ff0000;");
 
         Button logoutButton = new Button("Logout");
         logoutButton.setLayoutX(14.0);
@@ -34,10 +37,10 @@ public class MenuStudent extends Application {
             loginStudent.start(primaryStage);
         });
 
-        Button borrowBookButton = new Button("Borrow Book");
-        borrowBookButton.setLayoutX(275.0);
-        borrowBookButton.setLayoutY(172.0);
-        borrowBookButton.setPrefSize(177.0, 68.0);
+        Button borrowBookButton = new Button("Pinjam Buku");
+        borrowBookButton.setLayoutX(103);
+        borrowBookButton.setLayoutY(159);
+        borrowBookButton.setPrefSize(212, 76);
         borrowBookButton.setFont(new Font("System Bold", 18.0));
 
         borrowBookButton.setOnAction(actionEvent -> {
@@ -45,10 +48,10 @@ public class MenuStudent extends Application {
             borrowBook.start(primaryStage);
         });
 
-        Button borrowedBookButton = new Button("Borrowed Book");
-        borrowedBookButton.setLayoutX(275.0);
-        borrowedBookButton.setLayoutY(277.0);
-        borrowedBookButton.setPrefSize(177.0, 68.0);
+        Button borrowedBookButton = new Button("Kembalikan buku");
+        borrowedBookButton.setLayoutX(103);
+        borrowedBookButton.setLayoutY(294);
+        borrowedBookButton.setPrefSize(212, 76);
         borrowedBookButton.setFont(new Font("System Bold", 18.0));
 
         borrowedBookButton.setOnAction(actionEvent -> {
@@ -57,9 +60,9 @@ public class MenuStudent extends Application {
         });
 
         Button diagramPengunjungButton = new Button("Diagram Pengunjung");
-        diagramPengunjungButton.setLayoutX(275.0);
-        diagramPengunjungButton.setLayoutY(382.0);
-        diagramPengunjungButton.setPrefSize(177.0, 68.0);
+        diagramPengunjungButton.setLayoutX(393);
+        diagramPengunjungButton.setLayoutY(159);
+        diagramPengunjungButton.setPrefSize(212, 76);
         diagramPengunjungButton.setFont(new Font("System Bold", 18.0));
 
         diagramPengunjungButton.setOnAction(actionEvent -> {
@@ -68,9 +71,9 @@ public class MenuStudent extends Application {
         });
 
         Button daftarBukuButton = new Button("Daftar Buku");
-        daftarBukuButton.setLayoutX(275.0);
-        daftarBukuButton.setLayoutY(487.0);
-        daftarBukuButton.setPrefSize(177.0, 68.0);
+        daftarBukuButton.setLayoutX(393);
+        daftarBukuButton.setLayoutY(294);
+        daftarBukuButton.setPrefSize(212, 76);
         daftarBukuButton.setFont(new Font("System Bold", 18.0));
 
         daftarBukuButton.setOnAction(actionEvent -> {

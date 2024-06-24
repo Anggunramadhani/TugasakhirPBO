@@ -18,6 +18,7 @@ public class LoginStudent extends Application {
 
     public static boolean sudahTambah = false;
 
+
     public static void addTempStudent(){
         User.students.add(new Student("Aggun Ramadhani", "202310370311077",  "Teknik", "Informatika"));
         User.students.add(new Student("Fany Fauzah", "202310370311066", "Teknik ", "Informatika"));
@@ -27,6 +28,14 @@ public class LoginStudent extends Application {
         User.books.add(new Book("388c-e681-9152", "Laskar Pelangi", "Andrea Hirata\n", "Story", 15));
         User.books.add(new Book("ed90-be30-5cdb", "Bumi Manusia", "Pramoedya Ananta Toer\n", "Story",10));
         User.books.add(new Book("d95e-0c4a-9523", "Ayat-Ayat Cinta ", " Habiburahman Shirazy", "Story", 17));
+        User.books.add(new Book( "769-4-21-502837-9", "Bumi ", " Tere liye", "Story", 17));
+        User.books.add(new Book( "624-8-57-209361-2", "Maryam", " Okky Madasari", "Story", 10));
+        User.books.add(new Book( "135-7-92-846503-4", "Supernova ", " Dee Lestari", "Story", 15));
+        User.books.add(new Book( "421-0-45-731982-6", "Pulang ", " Leila S. Chudori", "Story", 21));
+        User.books.add(new Book( "769-4-21-502837-9", "Ronggeng Dukuh Paruk ", "Ahmad Tohari", "Story", 19));
+
+
+
     }
 
     @Override
@@ -37,24 +46,30 @@ public class LoginStudent extends Application {
             sudahTambah = true;
         }
         // Create the AnchorPane
+
+
+
         AnchorPane root = new AnchorPane();
         root.setPrefSize(700, 500);
+        root.setStyle("-fx-background-color: lightblue;"); // Optional: Set background color for visualization
+
+
 
         // Create the Labels
         Label titleLabel = new Label("UMM Library");
         titleLabel.setFont(new Font("Times New Roman", 36));
-        titleLabel.setLayoutX(231);
+        titleLabel.setLayoutX(255);
         titleLabel.setLayoutY(55);
         titleLabel.setStyle("-fx-text-fill: #ff0000;");
 
         Label nimLabel = new Label("NIM");
         nimLabel.setFont(new Font(18));
-        nimLabel.setLayoutX(136);
+        nimLabel.setLayoutX(163);
         nimLabel.setLayoutY(126);
 
         Label passwordLabel = new Label("Password");
         passwordLabel.setFont(new Font(18));
-        passwordLabel.setLayoutX(139);
+        passwordLabel.setLayoutX(163);
         passwordLabel.setLayoutY(212);
 
         Label errorLabel = new Label();
@@ -77,10 +92,12 @@ public class LoginStudent extends Application {
 
         // Create the Buttons
         Button loginButton = new Button("Login");
-        loginButton.setFont(new Font("System Bold", 18));
-        loginButton.setLayoutX(279);
+        loginButton.setFont(new Font("System Bold", 20));
+        loginButton.setLayoutX(295);
         loginButton.setLayoutY(318);
-        loginButton.setPrefSize(149, 61);
+        loginButton.setPrefSize(119, 40);
+        loginButton.setStyle("-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px; -fx-border-radius: 5px;");
+
 
         loginButton.setOnAction(actionEvent -> {
             errorLabel.setText("");
@@ -111,6 +128,7 @@ public class LoginStudent extends Application {
             if(!find) {
                 errorLabel.setText("NIM not found.");
             }
+
         });
 
         Button daftarButton = new Button("Daftar");
@@ -130,7 +148,10 @@ public class LoginStudent extends Application {
         primaryStage.setTitle("Login Form");
         primaryStage.setScene(scene);
         primaryStage.show();
+
+
     }
+
 
     public static void main(String[] args) {
         launch(args);

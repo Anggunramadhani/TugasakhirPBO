@@ -2,7 +2,6 @@ package com.main.tugaspbo;
 
 import DB.Student;
 import DB.User;
-import Student.MenuStudent;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -20,15 +19,17 @@ public class Daftar extends Application {
         // Create the AnchorPane
         AnchorPane root = new AnchorPane();
         root.setPrefSize(700, 500);
+        root.setStyle("-fx-background-color: lightblue;");
+
 
         // Create the Labels
         Label titleLabel = new Label("UMM Library");
         titleLabel.setFont(new Font("Times New Roman", 36));
-        titleLabel.setLayoutX(239);
+        titleLabel.setLayoutX(270);
         titleLabel.setLayoutY(54);
         titleLabel.setStyle("-fx-text-fill: #ff0000;");
 
-        Button backButton = new Button("Login Student");
+        Button backButton = new Button("Login ");
         backButton.setLayoutX(14.0);
         backButton.setLayoutY(446.0);
         backButton.setPrefSize(119.0, 40.0);
@@ -40,22 +41,22 @@ public class Daftar extends Application {
         });
 
         Label nameLabel = new Label("Nama");
-        nameLabel.setLayoutX(74.0);
+        nameLabel.setLayoutX(81.0);
         nameLabel.setLayoutY(113.0);
         nameLabel.setFont(new Font(18.0));
 
         Label nimLabel = new Label("NIM");
-        nimLabel.setLayoutX(74.0);
+        nimLabel.setLayoutX(81.0);
         nimLabel.setLayoutY(192.0);
         nimLabel.setFont(new Font(18.0));
 
         Label facultyLabel = new Label("Fakultas");
-        facultyLabel.setLayoutX(376.0);
+        facultyLabel.setLayoutX(386.0);
         facultyLabel.setLayoutY(113.0);
         facultyLabel.setFont(new Font(18.0));
 
         Label programLabel = new Label("Program Studi");
-        programLabel.setLayoutX(378.0);
+        programLabel.setLayoutX(386.0);
         programLabel.setLayoutY(192.0);
         programLabel.setFont(new Font(18.0));
 
@@ -94,10 +95,12 @@ public class Daftar extends Application {
         noterorlabel.setTextFill(Color.BLUE);
 
         Button submitButton = new Button("Submit");
-        submitButton.setLayoutX(274.0);
+        submitButton.setLayoutX(290.0);
         submitButton.setLayoutY(302.0);
-        submitButton.setPrefSize(165.0, 53.0);
+        submitButton.setPrefSize(150.0, 40.0);
         submitButton.setFont(new Font("System Bold", 18.0));
+        submitButton.setStyle("-fx-background-color: #4CAF50; -fx-text-fill: white;");
+
 
 
         submitButton.setOnAction(actionEvent -> {
@@ -129,13 +132,13 @@ public class Daftar extends Application {
             }
 
             if(!nim.matches("\\d+")) {
-                errorLabel.setText("NIM must be digits");
+                errorLabel.setText("NIM must be 15 digits");
                 return;
             }
             errorLabel.setText("Daftar berhasil!");
             User.students.add(new Student(name, nim, faculty, program));
-            MenuStudent menustudent = new MenuStudent();
-            menustudent.start(primaryStage);
+            LoginStudent loginStudent = new LoginStudent();
+            loginStudent.start(primaryStage);
         });
 
         root.getChildren().addAll(

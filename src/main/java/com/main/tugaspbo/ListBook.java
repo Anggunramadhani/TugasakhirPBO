@@ -24,11 +24,15 @@ public class ListBook extends Application {
     public void start(Stage primaryStage) throws Exception{
         AnchorPane root = new AnchorPane();
         root.setPrefSize(700, 500);
+        root.setStyle("-fx-background-color: lightblue;"); // Optional: Set background color for visualization
 
-        Label label = new Label("List Books");
-        label.setLayoutX(264.0);
+
+        Label label = new Label("Daftar Buku");
+        label.setLayoutX(250.0);
         label.setLayoutY(34.0);
         label.setFont(new Font("System Bold", 36.0));
+        label.setStyle("-fx-text-fill: #ff0000;");
+
 
         Button button = new Button("Back");
         button.setLayoutX(14.0);
@@ -78,7 +82,7 @@ public class ListBook extends Application {
         root.getChildren().addAll(label, button, scrollPane);
 
         Scene scene = new Scene(root);
-        primaryStage.setTitle("List Student");
+        primaryStage.setTitle("Daftar buku");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
